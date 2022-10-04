@@ -1,0 +1,13 @@
+Insert into UserInfo VALUES ('lavishmi','Lavish Mishra');
+Insert into UserInfo VALUES ('sakshimo','Sakshi Modi');
+Insert into UserInfo VALUES ('sakshi','Sakshi');
+Insert into UserInfo VALUES ('lavish','Lavish');
+Insert into SubscribedTopics VALUES ('lavishmi','TechCrunch');
+Insert into SubscribedTopics VALUES ('lavishmi','Technology');
+Insert into SubscribedTopics VALUES ('lavishmi','Apple');
+Insert into SubscribedTopics VALUES ('sakshimo','TechCrunch');
+Insert into SubscribedTopics VALUES ('sakshimo','Technology');
+Insert into SubscribedTopics VALUES ('sakshi','Apple');
+Insert into NodeTopicMapping VALUES ('Node1','TechCrunch',5000);
+Insert into NodeTopicMapping VALUES ('Node1','Technology',5000);
+Insert into NodeTopicMapping VALUES ('Node2','Apple',5001);

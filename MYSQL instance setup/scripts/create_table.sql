@@ -1,0 +1,6 @@
+CREATE table UserInfo(UserId varchar(100),PRIMARY KEY(UserId),Name varchar(100));
+CREATE table NodeTopicMapping(Node varchar(50),Topic varchar(50),Portno INT);
+CREATE table SubscribedTopics(UserId varchar(100),Topic varchar(50));
+CREATE table TechCrunch(rowvalue INT UNSIGNED NOT NULL AUTO_INCREMENT,PRIMARY KEY (rowvalue),SourceID varchar(500),SourceName varchar(800),Author varchar(800),Title varchar(1000),Description varchar(5000),URL varchar(1000),URLToImage varchar(1000),PublishedAt varchar(300),Content varchar(2000));
+CREATE table Technology(rowvalue INT UNSIGNED NOT NULL AUTO_INCREMENT,PRIMARY KEY (rowvalue),SourceID varchar(500),SourceName varchar(800),Author varchar(800),Title varchar(1000),Description varchar(5000),URL varchar(1000),URLToImage varchar(1000),PublishedAt varchar(300),Content varchar(2000));
+CREATE table Apple(rowvalue INT UNSIGNED NOT NULL AUTO_INCREMENT,PRIMARY KEY (rowvalue),SourceID varchar(500),SourceName varchar(800),Author varchar(800),Title varchar(1000),Description varchar(5000),URL varchar(1000),URLToImage varchar(1000),PublishedAt varchar(300),Content varchar(2000));

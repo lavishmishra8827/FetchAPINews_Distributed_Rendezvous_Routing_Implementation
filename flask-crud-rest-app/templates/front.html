@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Bootstrap Files -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>	
+		
+		<!-- CSS Linking -->
+		<link rel="stylesheet" href="static/style.css">
+		<title>Social CS News</title>
+	</head>
+	<body class="bodyContainer">
+		<!-- Navbar -->
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Social Computer Science News</a>
+				</div>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+				</ul>
+			</div>
+		</nav>
+		<br>
+		<div class="container-fluid">
+			<!-- Main Body -->
+			<center><h1>Welcome {{userID}}!</h1></center>
+			<br><br><br><br>
+			<div class="col-md-1"></div>
+			<div class="col-md-7">
+				{% for i in data_dict['lst'] %}
+				<h3>{{i[0]}}</h3>
+				<table class="table table-bordered">
+					<tbody>
+						<tr>
+							<td>Author</td>
+							<td>{{i[1]}}</td>
+						</tr>
+						<tr>
+							<td>Description</td>
+							<td>{{i[2]}}</td>
+						</tr>
+						<tr>
+							<td>URL</td>
+							<td>{{i[3]}}</td>
+						</tr>
+						<tr>
+							<td>URL to Image</td>
+							<td>{{i[4]}}</td>
+						</tr>
+						<tr>
+							<td>Content</td>
+							<td>{{i[5]}}</td>
+						</tr>			
+					</tbody>
+				</table>
+				<br>
+				{% endfor %}
+			</div>
+			<div class="col-md-1"></div>
+			<div class="col-md-2">
+				<h4>Topics-</h4>
+				<table class="table">
+					{% for i in data_dict['alltopics'] %}
+					<tr>
+						<td><h5>{{i[0]}}</h5></td>
+						<td>
+							<form action="/fetchFeeds" method="post">
+							<input type="hidden" value="{{userID}}" name="userid">
+							<input type="hidden" value="{{i[0]}}" name="topic">
+							<button type="submit" class="btn btn-primary">Show Feeds</button>
+						</td>
+						<td>
+							</form>
+							<form action="/fetchFeeds" method="post">
+							<input type="hidden" value="{{userID}}" name="userid">
+							<input type="hidden" value="Subscribe_{{i[0]}}" name="topic">
+							<button type="submit" class="btn btn-primary">Subscribe</button>
+							</form>
+						</td>
+						<td>
+							</form>
+							<form action="/fetchFeeds" method="post">
+							<input type="hidden" value="{{userID}}" name="userid">
+							<input type="hidden" value="Unsubscribe_{{i[0]}}" name="topic">
+							<button type="submit" class="btn btn-primary">Unsubscribe</button>
+							</form>
+						</td>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+		<br>
+		<br>
+		<br>
+		<!-- Footer -->
+		<div class="container-fluid footerContainer">
+			<div class="col-md-3">
+				<center>
+					<h5>Guided By:</h5>
+					<h5>Prof. Bina Ramamurthy</h5>
+				</center>
+			</div>
+			<div class="col-md-6"></div>
+			<div class="col-md-3">
+					<center><h5>Contact Us:</h5>
+					<h5>Lavish Mishra - lavishmishra8827@gmail.com</h5>
+					<h5>Sakshi Modi - sakshi.modi.22@gmail.com</h5></center>
+			</div>
+			<center>
+			<h5>Copyright of University at Buffalo CSE 586 Distributed Systems</h5>
+			<h5>All Rights Reserved</h5>
+			</center>
+		</div>
+	</body>
+</html>
